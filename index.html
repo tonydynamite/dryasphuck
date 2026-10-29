@@ -1,0 +1,155 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="DryAspHuck dehydrated water. Just add water."><title>DryAspHuck Water</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&display=swap">
+<style>
+/* Layout: slim premium-water header, hero with the founders gif as background and copy on top, then full-screen chaos on the same gif. Phone first. */
+
+:root{--bg:#fff;--fg:#14243a;--muted:#6b7a8c;--blue:#1b5fb8;--blue2:#0f4a9e;--sky:#3a8ae6;--gold:#ffd23f;--venmo:#008CFF;--line:#e6ebf2;--font:"Helvetica Neue",Helvetica,Arial,sans-serif;color-scheme:light}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:15px;line-height:1.45;overflow-x:hidden}
+.g{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+.promo{background:var(--blue);color:#fff;text-align:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:6px 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-block:10px;border-bottom:1px solid var(--line);background:#fff}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none}
+.brand .name{font-family:"Antonio","Oswald","Arial Narrow",sans-serif;font-weight:400;font-size:26px;letter-spacing:3px;transform:scaleY(1.25);transform-origin:left center;color:var(--blue);line-height:1}
+nav{display:flex;gap:14px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700}
+nav a{text-decoration:none}nav .shop{color:var(--blue)}
+.btn{display:inline-block;background:#fff;color:var(--blue);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:11px;padding:12px 22px;border-radius:2px;text-decoration:none}
+
+.hero{position:relative;color:#fff;text-align:center;padding-block:34px 36px;display:grid;gap:8px;justify-items:center;overflow:hidden;min-height:420px}
+.hero .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;z-index:0}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,95,184,.55),rgba(10,40,100,.75));z-index:1}
+.hero>*:not(.bgimg){position:relative;z-index:2}
+.hero .mark{width:60px}
+.hero h1{font-family:"Antonio","Oswald","Arial Narrow",sans-serif;font-weight:400;font-size:clamp(34px,10vw,56px);letter-spacing:3px;line-height:1;margin:0;text-transform:uppercase;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.hero .tag{font-weight:700;font-size:clamp(20px,6.5vw,34px);letter-spacing:3px;margin:0;text-transform:uppercase;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.hero p{margin:0;font-size:13px;max-width:34ch;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.hero .btn{margin-top:6px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding-block:14px;text-align:center;border-bottom:1px solid var(--line)}
+.facts b{display:block;font-weight:300;font-size:26px;color:var(--blue);line-height:1;font-variant-numeric:tabular-nums}
+.facts span{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+/* chaos */
+#chaos{position:relative;background:#000;color:#fff;height:100svh;min-height:560px;overflow:hidden}
+#chaos .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.6) contrast(1.2);opacity:.75}
+#boom{position:absolute;inset:0;width:100%;height:100%;display:block;mix-blend-mode:screen}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:9}
+#chaos.go .flash{animation:flash .5s .95s steps(1) forwards}
+@keyframes flash{0%{opacity:1}20%{opacity:0}40%{opacity:.9}60%{opacity:0}100%{opacity:0}}
+.stage{position:absolute;inset:0;z-index:2}
+.stage>*{position:absolute;left:50%;top:50%}
+.bm{width:min(60vw,360px);opacity:0;pointer-events:none;z-index:3;mix-blend-mode:screen}
+#chaos.go .bm{animation:bmpop .9s linear infinite}
+@keyframes bmpop{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}10%{opacity:1}60%{opacity:1;transform:translate(-50%,-50%) scale(1.3)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.6)}}
+.b0{left:15%;top:20%}.b1{left:80%;top:25%;animation-delay:.2s!important}.b2{left:50%;top:50%;animation-delay:.4s!important}.b3{left:20%;top:75%;animation-delay:.1s!important}.b4{left:85%;top:80%;animation-delay:.5s!important}.b5{left:50%;top:12%;animation-delay:.3s!important}.b6{left:10%;top:50%;animation-delay:.6s!important}.b7{left:90%;top:55%;animation-delay:.7s!important}.b8{left:50%;top:88%;animation-delay:.8s!important}
+.fly{width:min(38vw,220px);aspect-ratio:1;border:4px solid #fff;box-shadow:0 10px 40px rgba(0,0,0,.7);opacity:0;transform:translate(-50%,-50%) scale(0)}
+.fly img{width:100%;height:100%;object-fit:cover;display:block}
+#chaos.go .fly{animation:flyin .6s cubic-bezier(.2,1.5,.4,1) forwards, drift 1.3s ease-in-out infinite alternate}
+@keyframes flyin{to{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(var(--r))}}
+@keyframes drift{from{transform:translate(-52%,-48%) scale(1) rotate(var(--r))}to{transform:translate(-48%,-52%) scale(1.08) rotate(calc(var(--r) * -1))}}
+.d0{left:14%;top:14%;--r:-12deg;animation-delay:.5s,1.1s!important}.d1{left:86%;top:16%;--r:9deg;animation-delay:.6s,1.2s!important}.d2{left:12%;top:86%;--r:14deg;animation-delay:.7s,1.3s!important}.d3{left:88%;top:84%;--r:-8deg;animation-delay:.8s,1.4s!important}.d4{left:50%;top:10%;--r:4deg;animation-delay:.9s,1.5s!important}.d5{left:8%;top:50%;--r:-18deg;animation-delay:1s,1.6s!important}.d6{left:92%;top:50%;--r:16deg;animation-delay:1.1s,1.7s!important}
+.dog{width:min(88vw,520px);aspect-ratio:1;border:7px solid #fff;box-shadow:0 0 80px 30px rgba(255,100,0,.75);opacity:0;transform:translate(-50%,-50%) scale(.02);z-index:4}
+.dog img{width:100%;height:100%;object-fit:cover;display:block}
+#chaos.go .dog{animation:spinin 1.1s cubic-bezier(.1,.9,.2,1.15) forwards, jitter .12s 1.1s linear infinite}
+@keyframes spinin{0%{opacity:1;transform:translate(-50%,-50%) scale(.02) rotate(0)}100%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(1440deg)}}
+@keyframes jitter{0%{transform:translate(-51%,-49%) rotate(-3deg)}50%{transform:translate(-49%,-51%) rotate(3deg)}100%{transform:translate(-51%,-50%) rotate(-2deg)}}
+.hogan{width:min(70vw,420px);top:28%;opacity:0;transform:translate(-50%,-50%) scale(0) rotate(-20deg);border:5px solid #fff;box-shadow:0 10px 60px rgba(0,0,0,.8);z-index:5}
+.hogan img{width:100%;display:block}
+#chaos.go .hogan{animation:pop .4s 1.0s cubic-bezier(.2,1.6,.4,1) forwards, jitter2 .15s 1.4s linear infinite}
+@keyframes pop{to{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-6deg)}}
+@keyframes jitter2{0%{transform:translate(-50%,-50%) scale(1) rotate(-8deg)}50%{transform:translate(-48%,-52%) scale(1.04) rotate(-3deg)}100%{transform:translate(-52%,-49%) scale(1) rotate(-8deg)}}
+.shout{top:50%;width:100%;font-weight:900;font-size:clamp(46px,17vw,150px);line-height:.85;letter-spacing:-3px;color:var(--gold);-webkit-text-stroke:3px #c8161d;text-shadow:0 0 30px #ff6a00,7px 7px 0 #c8161d;opacity:0;transform:translate(-50%,-50%) scale(6);text-wrap:balance;padding:0 8px;z-index:6}
+#chaos.go .shout{animation:slam .25s 1.05s cubic-bezier(.1,1.4,.4,1) forwards, shake .07s 1.3s linear infinite}
+@keyframes slam{to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes shake{0%{transform:translate(-52%,-49%) rotate(-3deg)}25%{transform:translate(-48%,-52%) rotate(3deg)}50%{transform:translate(-51%,-51%) rotate(-2deg)}75%{transform:translate(-49%,-48%) rotate(3deg)}100%{transform:translate(-52%,-50%) rotate(-3deg)}}
+.venmo{top:50%;display:inline-flex;flex-direction:column;align-items:center;background:var(--venmo);color:#fff;font-weight:900;font-size:clamp(34px,11vw,64px);padding:18px 36px;border-radius:999px;text-decoration:none;border:5px solid #fff;box-shadow:0 0 0 6px var(--venmo),0 20px 60px rgba(0,0,0,.7);opacity:0;white-space:nowrap;transform:translate(-50%,-50%) scale(0) rotate(-1080deg);line-height:1;z-index:20}
+.venmo small{font-size:.4em;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-top:5px}
+#chaos.go .venmo{animation:vspin .7s 1.5s cubic-bezier(.2,.9,.3,1.3) forwards, pulse .5s 2.2s ease-in-out infinite alternate}
+@keyframes vspin{to{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0)}}
+@keyframes pulse{from{transform:translate(-50%,-50%) scale(1)}to{transform:translate(-50%,-50%) scale(1.12)}}
+@media (prefers-reduced-motion:reduce){#chaos .stage>*{opacity:1!important;animation:none!important;transform:translate(-50%,-50%)!important}}
+</style></head><body>
+
+<div class="promo">Free shipping on every order. There is nothing to ship.</div>
+<header class="top g">
+  <a class="brand" href="./"><svg viewBox="0 0 200 200" width="44" height="44" aria-hidden="true"><g transform="translate(100,70) scale(1.0)">
+<path d="M0 -40 C-2 -20 -2 0 0 20" fill="none" stroke="#ffd23f" stroke-width="6" stroke-linecap="round"/>
+<ellipse cx="-26" cy="0" rx="28" ry="32" fill="#ff5fa2"/><ellipse cx="26" cy="0" rx="28" ry="32" fill="#ff5fa2"/>
+<ellipse cx="-30" cy="-6" rx="14" ry="18" fill="#ff8fc0"/><ellipse cx="30" cy="-6" rx="14" ry="18" fill="#ff8fc0"/>
+<path d="M0 -26 C-1 -10 -1 10 0 28" fill="none" stroke="#c21d6c" stroke-width="4" stroke-linecap="round"/>
+<circle cx="0" cy="-40" r="7" fill="#ffd23f"/>
+</g><g transform="translate(100,112) scale(0.62)"><path d="M0 0 C 20 -30, 60 -55, 110 -60 C 70 -45, 40 -20, 0 0 Z" fill="#1f9e5a" transform="rotate(15)"/><path d="M0 0 C 20 -30, 60 -55, 110 -60 C 70 -45, 40 -20, 0 0 Z" fill="#3fcf7a" transform="rotate(45)"/><path d="M0 0 C 20 -30, 60 -55, 110 -60 C 70 -45, 40 -20, 0 0 Z" fill="#1f9e5a" transform="rotate(75)"/><g transform="scale(-1,1)"><path d="M0 0 C 20 -30, 60 -55, 110 -60 C 70 -45, 40 -20, 0 0 Z" fill="#1f9e5a" transform="rotate(15)"/><path d="M0 0 C 20 -30, 60 -55, 110 -60 C 70 -45, 40 -20, 0 0 Z" fill="#3fcf7a" transform="rotate(45)"/><path d="M0 0 C 20 -30, 60 -55, 110 -60 C 70 -45, 40 -20, 0 0 Z" fill="#1f9e5a" transform="rotate(75)"/></g></g></svg><span class="name">DRYASPHUCK</span></a>
+  <nav><a href="./#water">Water</a><a href="team.html">The Team</a><a class="shop" href="https://venmo.com/ianricky?txn=pay&amount=5&note=1%20DryAspHuck">Shop</a></nav>
+</header>
+
+<section class="hero g" id="water">
+  <img class="bgimg" src="dance.gif" alt="">
+  <svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><g transform="translate(100,70) scale(1.1)">
+<path d="M0 -40 C-2 -20 -2 0 0 20" fill="none" stroke="#ffd23f" stroke-width="6" stroke-linecap="round"/>
+<ellipse cx="-26" cy="0" rx="28" ry="32" fill="#ff5fa2"/><ellipse cx="26" cy="0" rx="28" ry="32" fill="#ff5fa2"/>
+<ellipse cx="-30" cy="-6" rx="14" ry="18" fill="#ff8fc0"/><ellipse cx="30" cy="-6" rx="14" ry="18" fill="#ff8fc0"/>
+<path d="M0 -26 C-1 -10 -1 10 0 28" fill="none" stroke="#c21d6c" stroke-width="4" stroke-linecap="round"/>
+<circle cx="0" cy="-40" r="7" fill="#ffd23f"/>
+</g><g transform="translate(100,118) scale(0.7)"><path d="M0 0 C 20 -30, 60 -55, 110 -60 C 70 -45, 40 -20, 0 0 Z" fill="#8fe3b3" transform="rotate(15)"/><path d="M0 0 C 20 -30, 60 -55, 110 -60 C 70 -45, 40 -20, 0 0 Z" fill="#bff3d4" transform="rotate(45)"/><path d="M0 0 C 20 -30, 60 -55, 110 -60 C 70 -45, 40 -20, 0 0 Z" fill="#8fe3b3" transform="rotate(75)"/><g transform="scale(-1,1)"><path d="M0 0 C 20 -30, 60 -55, 110 -60 C 70 -45, 40 -20, 0 0 Z" fill="#8fe3b3" transform="rotate(15)"/><path d="M0 0 C 20 -30, 60 -55, 110 -60 C 70 -45, 40 -20, 0 0 Z" fill="#bff3d4" transform="rotate(45)"/><path d="M0 0 C 20 -30, 60 -55, 110 -60 C 70 -45, 40 -20, 0 0 Z" fill="#8fe3b3" transform="rotate(75)"/></g></g></svg>
+  <h1>DryAspHuck</h1>
+  <p class="tag">Dehydrated Water &#8226; Just Add Water</p>
+  <p>Naturally pH balanced. Drawn from a volcanic aquifer in Bend, Oregon and carefully stripped of every last drop.</p>
+  <a class="btn" href="https://venmo.com/ianricky?txn=pay&amount=5&note=1%20DryAspHuck">Shop Now &#8226; $5</a>
+</section>
+
+<div class="facts g">
+  <div><b>0%</b><span>Moisture</span></div>
+  <div><b>0 g</b><span>Net weight</span></div>
+  <div><b>0</b><span>Steps</span></div>
+</div>
+
+<section id="chaos">
+  <img class="bgimg" src="dance.gif" alt="">
+  <canvas id="boom"></canvas>
+  <div class="flash"></div>
+  <div class="stage">
+    <img class="bm b0" src="boom2t.gif" alt="" aria-hidden="true"><img class="bm b1" src="boom1t.gif" alt="" aria-hidden="true"><img class="bm b2" src="boom1t.gif" alt="" aria-hidden="true"><img class="bm b3" src="boom2t.gif" alt="" aria-hidden="true"><img class="bm b4" src="boom1t.gif" alt="" aria-hidden="true"><img class="bm b5" src="boom1t.gif" alt="" aria-hidden="true"><img class="bm b6" src="boom2t.gif" alt="" aria-hidden="true"><img class="bm b7" src="boom1t.gif" alt="" aria-hidden="true"><img class="bm b8" src="boom1t.gif" alt="" aria-hidden="true">
+    <div class="fly d0"><img src="sq01.jpg" alt=""></div><div class="fly d1"><img src="sq02.jpg" alt=""></div><div class="fly d2"><img src="sq03.jpg" alt=""></div><div class="fly d3"><img src="sq04.jpg" alt=""></div><div class="fly d4"><img src="sq06.jpg" alt=""></div><div class="fly d5"><img src="sq08.jpg" alt=""></div><div class="fly d6"><img src="sq09.jpg" alt=""></div>
+    <div class="dog"><img src="dog_sq.jpg" alt=""></div>
+    <div class="hogan"><img src="hogan.gif" alt=""></div>
+    <div class="shout">JUST ADD WATERRR</div>
+    <a class="venmo" href="https://venmo.com/ianricky?txn=pay&amount=5&note=1%20DryAspHuck">BUY NOW $5<small>Venmo @ianricky</small></a>
+  </div>
+</section>
+
+<script>
+(function(){
+  var chaos=document.getElementById('chaos'),cv=document.getElementById('boom'),ctx=cv.getContext('2d'),on=false,parts=[],W,H;
+  function size(){W=cv.width=chaos.clientWidth;H=cv.height=chaos.clientHeight;}
+  size();window.addEventListener('resize',size);
+  function rnd(a,b){return a+Math.random()*(b-a)}
+  function burst(x,y,n,pw){
+    for(var i=0;i<n;i++){var a=rnd(0,6.283),s=rnd(2,pw);parts.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-rnd(1,4),r:rnd(6,22),l:1,d:rnd(.03,.07)});}
+    parts.push({x:x,y:y,ring:1,r:2,l:1});
+  }
+  function col(l){
+    if(l>.8)return 'rgba(255,255,220,'+l+')';
+    if(l>.55)return 'rgba(255,215,60,'+l+')';
+    if(l>.3)return 'rgba(255,110,0,'+l+')';
+    return 'rgba(200,30,0,'+Math.max(l*1.5,0)+')';
+  }
+  var last=0;
+  function tick(t){
+    if(!on)return;
+    if(t-last>70){burst(rnd(0,W),rnd(H*.1,H),70,16);burst(rnd(0,W),H+10,40,10);last=t;}
+    ctx.globalCompositeOperation='source-over';
+    ctx.clearRect(0,0,W,H);
+    ctx.globalCompositeOperation='lighter';
+    for(var i=parts.length-1;i>=0;i--){var p=parts[i];
+      if(p.ring){p.r+=22;p.l-=.06;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.strokeStyle='rgba(255,200,80,'+Math.max(p.l,0)+')';ctx.lineWidth=10;ctx.stroke();}
+      else{p.x+=p.vx;p.y+=p.vy;p.vy-=.08;p.vx*=.97;p.l-=p.d;
+        var r=p.r*(0.4+p.l*.8);ctx.fillStyle=col(p.l);ctx.beginPath();ctx.arc(p.x,p.y,r,0,6.283);ctx.fill();}
+      if(p.l<=0)parts.splice(i,1);}
+    if(parts.length>900)parts.splice(0,parts.length-900);
+    requestAnimationFrame(tick);
+  }
+  function go(){if(on)return;on=true;chaos.classList.add('go');size();for(var i=0;i<6;i++)burst(rnd(0,W),rnd(0,H),90,20);requestAnimationFrame(tick);}
+  new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)go();});},{threshold:0.05}).observe(chaos);
+  window.addEventListener('scroll',function(){if(window.scrollY>60)go();},{passive:true});
+})();
+</script>
+</body></html>
